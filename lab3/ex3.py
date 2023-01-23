@@ -5,5 +5,5 @@ def is_plusone_dictionary(dict1):
        else:
            return False
 
-print(is_plusone_dictionary({1:2, 3:4, 5:6, 7:8}) )      
+print(is_plusone_dictionary({1:2, 3:4, 5:6, 7:8}))      
            
