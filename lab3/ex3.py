@@ -1,7 +1,9 @@
-def is_plusone_dictionary(dict1):
-    for i in dict1:
-        x = dict1.get(i)
-        
+def is_plusone_dictionary(d):
+    keys = sorted(d.keys())
+    for i in range(len(keys)):
+        if d[keys[i]] - keys[i] != 1 :
+            return False
+    return True
 
-print(is_plusone_dictionary({1:2, 3:4, 5:6, 7:8}))      
+print(is_plusone_dictionary({2:3,4:5,6:7,8:9}))
            
