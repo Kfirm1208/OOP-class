@@ -1,30 +1,20 @@
 # def is_plusone_dictionary(d):
 #     keys = sorted(d.keys())
+#     last_keys = None
 #     for i in range(len(keys)):
-#         if d[keys[i]] - keys[i] != 1 :
+#         if d[keys[i]] - keys[i] != 1:
 #             return False
+#         if last_keys and keys[i] != last_keys + 2:
+#             return False
+#         last_keys = keys[i]
 #     return True
 
-# def is_plusone_dictionary_v4(d):
-#     return all(key+1 == value for key,value in d.items())
+def is_plusone_dictionary(d):
+    keys = sorted(d.keys())
+    return all(d[keys[i]] - keys[i] == 1 and (i == 0 or keys[i] == keys[i - 1] + 2) for i in range(len(keys)))
 
-# def is_plusone_dictionary_v5(d):
-#     return all(key+1 == value for key, value in zip(d.keys(), d.values()))
 
-# def is_plusone_dictionary_v6(d):
-#     keys = list(d.keys())
-#     values = list(d.values())
-#     keys.sort()
-#     values.sort()
-#     for i in range(len(keys)):
-#         if keys[i] + 1 != values[i]:
-#             return False
-#     return True
-def is_plusone_dictionary_v7(d):
-    keys = list(d.keys())
-    values = list(d.values())
-    diff = list(map(lambda x, y: x+1 == y, keys, values))
-    return all(diff)
-
-print(is_plusone_dictionary_v7({2:3,4:5,6:7,8:9}))
+# print(is_plusone_dictionary({2:3,4:5,6:7,8:9}))
+# print(is_plusone_dictionary({1:2,3:4,5:6,8:10}))
+print(is_plusone_dictionary({10:9,8:7}))
            
