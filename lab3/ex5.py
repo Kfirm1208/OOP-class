@@ -20,17 +20,24 @@ record_collection = {
 
 
 def update_records(record, id, property, value):
+  #check id in dict donlt have id return record
   if id in record.keys():
+    # change data
     if property != "tracks" and value != "":
+      # add property
       record[id].update({property: value})
 
     elif property == 'tracks' and 'tracks' not in record[id].keys():
       record[id].append({'tracks': []})
+      #add value in list
       record[id][property].append(value)
+      
+    # have value input
     elif property == 'tracks' and value != '':
       record[id][property].append(value)
-
+    # don't have value
     elif value == "":
+      #delete the value
       del record[id][property]
 
     return record
