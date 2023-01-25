@@ -23,5 +23,4 @@ def calc_average_score(data):
 
 
 score = add_score({'65010682':{'Physic':79}},'65010682','English',60)
-print(score)
 print(calc_average_score(score))
